@@ -1,4 +1,3 @@
-uuid: 79fb6064-3c4c-4a29-a08c-a5d1b3db495a
 langcode: en
 status: true
 dependencies:
@@ -7,13 +6,14 @@ dependencies:
   module:
     - csv_serialization
     - file
+    - nfa_tracker
     - rest
     - serialization
     - user
     - views_autocomplete_filters
     - views_data_export
 _core:
-  default_config_hash: zDf2rSI8s2ySPC1nxMChWJPku-deUNSg73BarGgd1YE
+  default_config_hash: tCuXZ7kV2BQfz9CqbVkFu8JtSceyUNfwTur5CUp__sk
 id: nfa_user_file_tracker
 label: 'NFA user file activity tracker'
 module: nfa_tracker
@@ -28,7 +28,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'File Uploads'
+      title: 'KML file upload tracker'
       fields:
         uid:
           id: uid
@@ -446,7 +446,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view nfa reports'
+          perm: 'view nfa tracker reports'
       cache:
         type: tag
         options: {  }
@@ -527,7 +527,7 @@ display:
           exposed: true
           expose:
             operator_id: uid_op
-            label: 'User Name'
+            label: User
             description: ''
             use_operator: false
             operator: uid_op
@@ -711,11 +711,11 @@ display:
             use_serializer_encode_only: false
       display_extenders:
         ajax_history: {  }
-      path: admin/reports/nfa/activity/kml/export
+      path: admin/reports/nfa/tracker/kml/export
       displays:
         page_1: page_1
         default: '0'
-      filename: nfa-user-activity-kml.csv
+      filename: nfa-user-tracker-kml.csv
       automatic_download: true
       export_method: batch
       export_batch_size: 1000
@@ -738,7 +738,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'KML File Uploads'
+      title: 'KML file upload tracker'
       defaults:
         title: false
         pager: true
@@ -766,7 +766,7 @@ display:
       display_description: ''
       display_extenders:
         ajax_history: {  }
-      path: admin/reports/nfa/activity/kml
+      path: admin/reports/nfa/tracker/kml
       menu:
         type: normal
         title: 'KML activity report'
@@ -774,7 +774,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: nfa.reports.activity
+        parent: nfa.reports.tracker
         context: '0'
     cache_metadata:
       max-age: -1
