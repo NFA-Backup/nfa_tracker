@@ -2,7 +2,7 @@
 
 /**
  * @file
- * NFA Activity hook implementations.
+ * NFA Tracker hook implementations.
  */
 
 use Drupal\Core\Form\FormStateInterface;
@@ -10,7 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
-function nfa_activity_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function nfa_tracker_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['revision']['#access']) {
     // Ensure people cannot uncheck the revision requirement.
     $form['revision']['#attributes']['disabled'] = true;

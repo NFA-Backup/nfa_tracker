@@ -1,0 +1,5 @@
+nfa.reports.tracker:
+  title: 'NFA user reports'
+  parent: system.admin_reports
+  description: 'NFA user tracker reports'
+  route_name: nfa.reports.tracker

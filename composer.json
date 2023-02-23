@@ -1,7 +1,7 @@
 {
-  "name": "Cambrico/nfa_activity",
+  "name": "cambrico/nfa_tracker",
   "description": "User activity tracking for NFA websites",
   "type": "drupal-module",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-2.0-or-later"
 }
 

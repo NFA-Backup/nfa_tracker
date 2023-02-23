@@ -11,10 +11,10 @@ dependencies:
     - serialization
     - user
     - views_data_export
-id: nfa_user_content_activity
-label: 'NFA user content activity'
-module: views
-description: ''
+id: nfa_user_content_tracker
+label: 'NFA user content activity tracker'
+module: nfa_tracker
+description: 'Track content editing activity by user.'
 tag: ''
 base_table: node_field_revision
 base_field: vid
@@ -25,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'User content activity'
+      title: 'User content activity tracker'
       fields:
         revision_uid:
           id: revision_uid

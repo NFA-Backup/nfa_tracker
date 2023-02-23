@@ -1,5 +1,0 @@
-nfa.reports.activity:
-  title: 'NFA user reports'
-  parent: system.admin_reports
-  description: 'NFA user activity reports'
-  route_name: nfa.reports.activity
