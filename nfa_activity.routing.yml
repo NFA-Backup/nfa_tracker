@@ -1,0 +1,7 @@
+nfa.reports.activity:
+  path: '/admin/reports/nfa/activity'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'NFA user activity reports'
+  requirements:
+    _permission: 'view nfa reports'

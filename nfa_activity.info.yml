@@ -1,0 +1,7 @@
+name: NFA User Activity
+description: Provides information about user content editing activity.
+core_version_requirement: ^9
+type: module
+package: NFA
+dependencies:
+  - drupal:views
