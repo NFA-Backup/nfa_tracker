@@ -13,12 +13,23 @@ use Drupal\Core\Form\FormStateInterface;
 function nfa_tracker_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['revision']['#access']) {
     // Ensure people cannot uncheck the revision requirement.
-    $form['revision']['#attributes']['disabled'] = true;
-    $form['revision']['#value'] = true;
-    $form['revision_log']['#states'] = [];
-    $form['revision_log']['#required'] = true;
-    $form['revision_log']['widget']['#required'] = true;
-    $form['revision_log']['widget'][0]['#required'] = true;
-    $form['revision_log']['widget'][0]['value']['#required'] = true;
+    $form['revision']['#attributes']['disabled'] = TRUE;
+    $form['revision']['#value'] = TRUE;
+    $form['revision_log']['widget'][0]['value']['#required'] = TRUE;
+
+    // Add a new validation function.
+    $form['#validate'][] = 'nfa_tracker_node_form_validate';
+  }
+}
+
+/**
+ * Form validation handler for node_form().
+ *
+ * @see color_scheme_form_submit()
+ */
+function nfa_tracker_node_form_validate($form, FormStateInterface $form_state) {
+  // Revision log message must be at least 15 characters.
+  if (strlen($form_state->getValue('revision_log')[0]['value']) < 15) {
+    $form_state->setErrorByName('revision_log', t('Revision log message must be at least 15 characters long.'));
   }
 }
