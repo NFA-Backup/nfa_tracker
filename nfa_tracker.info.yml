@@ -1,6 +1,6 @@
 name: NFA User Tracker
 description: Provides information about user content editing activity.
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 type: module
 package: NFA
 dependencies:
